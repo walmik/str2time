@@ -2,7 +2,7 @@
 /**
  * Convert human readable time string to time
  * @param  {String} str Human readable time @eg: 9am
- * @return {String} Formatted time @eg: 00:00:00
+ * @return {String|Boolean} Formatted time @eg: 09:00:00 OR false
  */
 module.exports = function(str) {
 
@@ -58,10 +58,6 @@ module.exports = function(str) {
 
 		str = h+':'+m+':'+s;
 	}
-	
-	
-	
-	//split timeNum to hours and seconds
 	
 	return str;	
 
