@@ -1,6 +1,6 @@
 
 /**
- * Convert human readable time like 9am to time format 09:00:00
+ * Convert humanized time like 9am to time format 09:00:00
  * @param  {String} str Human readable time @eg: 9am
  * @return {String|Boolean} Formatted time @eg: 09:00:00 OR false
  */

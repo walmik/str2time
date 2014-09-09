@@ -14,7 +14,9 @@
     "time",
     "string to time",
     "human readable time",
-    "javascript"
+    "javascript",
+    "node.js",
+    "nodejs"
   ],
   "author": "Walmik Deshpande",
   "license": "MIT",
