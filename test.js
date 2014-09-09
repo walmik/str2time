@@ -46,10 +46,40 @@ describe('str2time', function(){
 		});
 	});
 
+
+	//9:30:00am
+	describe('9:30:00am', function(){
+		it('should return 09:30:00', function(){
+			assert.equal(str2time('9:30:00am'), '09:30:00');
+		});
+	});
+
+
+	//9:30:00a
+	describe('9:30:00a', function(){
+		it('should return 09:30:00', function(){
+			assert.equal(str2time('9:30:00a'), '09:30:00');
+		});
+	});
+
+	//9:30:00p
+	describe('9:30:00p', function(){
+		it('should return 21:30:00', function(){
+			assert.equal(str2time('9:30:00p'), '21:30:00');
+		});
+	});
+
 	//9:30pm
 	describe('9:30pm', function(){
 		it('should return 21:30:00', function(){
 			assert.equal(str2time('9:30pm'), '21:30:00');
+		});
+	});
+
+	//9:30p
+	describe('9:30p', function(){
+		it('should return 21:30:00', function(){
+			assert.equal(str2time('9:30p'), '21:30:00');
 		});
 	});
 
@@ -60,6 +90,15 @@ describe('str2time', function(){
 			assert.equal(str2time('9pm'), '21:00:00');
 		});
 	});
+
+
+	//23:14:03
+	describe('23:14:03', function(){
+		it('should return 23:14:03', function(){
+			assert.equal(str2time('23:14:03'), '23:14:03');
+		});
+	});
+
 
 	//9p
 	describe('9p', function(){
