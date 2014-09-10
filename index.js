@@ -17,7 +17,7 @@ module.exports = function(str) {
 
 	//Do not accept any character that is not 0-9.:amp\s
 	if( str.match(/[^0-9\.:apm\s]/g) ) {
-		return false;
+		throw new Error('Invalid input!');
 	}
 
 	//Separate the numerictime(remove am/pm if any)
@@ -67,7 +67,7 @@ module.exports = function(str) {
 
 		//Check if we have out of bound numbers
 		if(Number(h) > 23 || Number(m) > 59 || Number(s) > 59) {
-			return false;
+			throw new RangeError();
 		}
 
 		//Assemble what we ve got so far

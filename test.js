@@ -1,13 +1,17 @@
 var assert = require('assert');
+var should = require('should');
 var str2time = require('./')
 
 
 describe('str2time', function(){
 
-	//return false on unwanted characters
+	//throw error on unwanted characters
 	describe('adw3', function(){
-		it('should return false when the argument contains unwanted characters', function(){
-			assert.equal(str2time('adw3'), false);
+		it('should throw error when the argument contains unwanted characters', function(){
+			//assert.equal(str2time('adw3'), false);
+			(function(){
+				str2time('adw3');
+			}).should.throw();
 		});
 	});
 
@@ -108,10 +112,12 @@ describe('str2time', function(){
 	});
 
 
-	//91:30
+	//throw range error on out of bound numbers
 	describe('91:30', function(){
-		it('should return false', function(){
-			assert.equal(str2time('91:30'), false);
+		it('should throw RangeError on out of bound numbers', function(){
+			(function(){
+				str2time('91:30');
+			}).should.throw();
 		});
 	});
 })
