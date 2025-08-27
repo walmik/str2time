@@ -1,6 +1,6 @@
-var assert = require('assert');
-var should = require('should');
-var str2time = require('./');
+import * as assert from 'assert';
+import 'should';
+import str2time = require('./index');
 
 describe('str2time', function () {
   //throw error on unwanted characters
@@ -159,7 +159,7 @@ describe('str2time', function () {
   describe('invalid inputs', function () {
     it('should throw error for non-string input', function () {
       (function () {
-        str2time(123);
+        str2time(123 as any);
       }).should.throw();
     });
 

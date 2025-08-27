@@ -2,9 +2,17 @@
   "name": "str2time",
   "version": "1.0.0-alpha",
   "description": "Simple utility to convert human input time like 9am to time format 09:00:00",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ],
   "scripts": {
-    "test": "mocha"
+    "build": "tsc",
+    "test": "npm run build && mocha dist/test.js",
+    "test:ts": "mocha -r ts-node/register src/test.ts",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,8 +29,12 @@
   "author": "Walmik Deshpande",
   "license": "MIT",
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.2",
     "mocha": "^11.7.1",
     "prettier": "^3.6.2",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   }
 }

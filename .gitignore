@@ -25,3 +25,6 @@ build/Release
 node_modules
 
 .claude
+
+# TypeScript build output
+dist/

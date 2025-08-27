@@ -1,9 +1,11 @@
 /**
  * Convert humanized time like 9am to time format 09:00:00
- * @param  {string} str Human readable time @eg: 9am
- * @return {string} Formatted time @eg: 09:00:00
+ * @param str Human readable time @example: '9am'
+ * @returns Formatted time @example: '09:00:00'
+ * @throws {Error} When input is invalid
+ * @throws {RangeError} When time values are out of range
  */
-module.exports = (str) => {
+function str2time(str: string): string {
   if (typeof str !== 'string') {
     throw new Error('Input must be a string');
   }
@@ -54,9 +56,11 @@ module.exports = (str) => {
   }
 
   // Format with zero padding
-  const formatTime = (hours, minutes, seconds) => {
+  const formatTime = (hours: number, minutes: number, seconds: number): string => {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
 
   return formatTime(h, m, s);
-};
+}
+
+export = str2time;
