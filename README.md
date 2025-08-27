@@ -1,5 +1,4 @@
-str2time
-========
+# str2time
 
 Simple JavaScript utility to convert humanized time like 9am to time format 09:00:00
 
